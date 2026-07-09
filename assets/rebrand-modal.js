@@ -25,7 +25,7 @@
           '<span class="rl-1">EZ Loader TMS is now</span>' +
           '<span class="rl-2">EZ TMS</span>' +
         '</h2>' +
-        '<button type="button" class="rebrand-btn" data-close>Got it</button>' +
+        '<button type="button" class="btn-outline rebrand-btn" data-close>Got it</button>' +
       '</div>' +
     '</div>';
   document.body.appendChild(modal);
