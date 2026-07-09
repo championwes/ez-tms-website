@@ -174,7 +174,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;lin
 .testimonial{position:relative;overflow:hidden;background:var(--white);color:var(--navy);padding:72px 0}
 .testimonial-wrap{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:28px}
 /* foam finger — inline left column, centered with the quote */
-.test-finger{position:static;flex:0 0 320px;width:320px;height:auto;transform:none;
+.test-finger{position:static;flex:0 0 400px;width:400px;height:auto;transform:none;
   pointer-events:none;filter:drop-shadow(0 14px 22px rgba(0,0,0,.2))}
 /* slider — takes remaining space */
 .test-slider{flex:1;min-width:0;overflow:hidden}
@@ -353,7 +353,7 @@ body.page-light{background:#fff}
 /* big quote with foam finger */
 .big-quote{position:relative;background:#fff;color:var(--navy2);overflow:hidden;padding:64px 0}
 .bq-inner{max-width:1120px;margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:36px}
-.bq-finger{position:static;flex:0 0 320px;width:320px;height:auto;object-fit:contain;
+.bq-finger{position:static;flex:0 0 400px;width:400px;height:auto;object-fit:contain;
   transform:rotate(5deg);filter:drop-shadow(0 4px 4px rgba(0,0,0,.25))}
 .bq-content{position:relative;flex:1;min-width:0;margin:0}
 .bq-mark{font-family:var(--display);font-size:150px;letter-spacing:.05em;color:var(--red);line-height:.74;user-select:none}
@@ -642,7 +642,7 @@ body.page-light{background:#fff}
   .page-hero-inner{padding-left:var(--pad);padding-top:80px}
   .band-title{margin-bottom:56px}
   .cta-band-photo{width:100%;left:0;top:0;height:100%}
-  .bq-finger{flex-basis:240px;width:240px}
+  .bq-finger{flex-basis:300px;width:300px}
   .bq-text{font-size:34px}
   .lg-title{font-size:56px;line-height:1.1}
   .edi-hero{min-height:0;padding-bottom:48px}
