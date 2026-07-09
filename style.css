@@ -350,20 +350,6 @@ body.page-light{background:#fff}
 .dots span:hover{background:rgba(20,40,90,.45)}
 .dots span.on{background:var(--red)}
 
-/* big quote with foam finger */
-.big-quote{position:relative;background:#fff;color:var(--navy2);overflow:hidden;padding:64px 0}
-.bq-inner{max-width:1120px;margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:36px}
-.bq-finger{position:static;flex:0 0 400px;width:400px;height:auto;object-fit:contain;
-  transform:rotate(5deg);filter:drop-shadow(0 4px 4px rgba(0,0,0,.25))}
-.bq-content{position:relative;flex:1;min-width:0;margin:0}
-.bq-mark{font-family:var(--display);font-size:150px;letter-spacing:.05em;color:var(--red);line-height:.74;user-select:none}
-.bq-open{position:absolute;left:0;top:-4px}
-.bq-text{position:relative;font-family:"Red Hat Display",var(--display);font-weight:900;font-size:40px;
-  line-height:1.08;text-transform:uppercase;color:var(--navy2);margin:14px 0 0 66px}
-.bq-close{position:absolute;font-size:150px;line-height:.5;margin-left:8px;
-  display:inline-block;height:24px;transform:translateY(18px)}
-.bq-rule{border:none;border-top:2px solid var(--red);width:80px;margin:34px 0 6px 66px}
-.bq-cite{font-size:20px;letter-spacing:.05em;margin-left:66px;color:var(--navy2)}
 .cta-band.red-top{border-top:2px solid var(--red)}
 
 /* edi connectivity */
@@ -642,8 +628,6 @@ body.page-light{background:#fff}
   .page-hero-inner{padding-left:var(--pad);padding-top:80px}
   .band-title{margin-bottom:56px}
   .cta-band-photo{width:100%;left:0;top:0;height:100%}
-  .bq-finger{flex-basis:300px;width:300px}
-  .bq-text{font-size:34px}
   .lg-title{font-size:56px;line-height:1.1}
   .edi-hero{min-height:0;padding-bottom:48px}
   .edi-matters{flex-direction:column;gap:36px;padding:48px var(--pad)}
@@ -799,14 +783,6 @@ body.page-light{background:#fff}
   .lead-light{font-size:17px;margin-bottom:36px}
   .shot-cluster{gap:6px}
   .cluster-arrow{font-size:26px}
-  .big-quote{padding:44px 0}
-  .bq-finger{display:none}
-  .bq-content{margin:0}
-  .bq-text{font-size:24px;margin:40px 0 0 0}
-  .bq-mark{font-size:90px}
-  .bq-open{top:-4px}
-  .bq-close{transform:translateY(14px)}
-  .bq-rule,.bq-cite{margin-left:0}
   .lg-title{font-size:36px}
   .edi-sub{font-size:17px;padding:0 var(--pad)}
   .edi-photo{height:200px}
