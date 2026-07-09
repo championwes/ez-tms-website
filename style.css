@@ -948,7 +948,9 @@ body.page-light{background:#fff}
 .demo-dialog .submitted-message,.demo-dialog .hs-main-font-element{font-family:var(--body);font-size:18px;color:var(--navy2);padding:8px 0}
 
 /* ---- First-visit rebrand notice (reuses the .demo-modal chrome) ---- */
-.rebrand-dialog{max-width:560px;padding:0;overflow:hidden;text-align:center}
+/* .demo-dialog.rebrand-dialog (two classes) so padding:0 beats the mobile
+   @media .demo-dialog{padding:32px 22px} rule — keeps the red bar flush to the edge */
+.demo-dialog.rebrand-dialog{max-width:560px;padding:0;overflow:hidden;text-align:center}
 .rebrand-bar{display:block;height:8px;background:var(--red)}
 .rebrand-body{padding:42px 46px 40px}
 .rebrand-logos{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:30px}
