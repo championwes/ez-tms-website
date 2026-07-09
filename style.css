@@ -947,6 +947,28 @@ body.page-light{background:#fff}
 .demo-dialog .hs-error-msgs label,.demo-dialog .hs-error-msg{color:var(--red);font-size:13px;font-weight:400}
 .demo-dialog .submitted-message,.demo-dialog .hs-main-font-element{font-family:var(--body);font-size:18px;color:var(--navy2);padding:8px 0}
 
+/* ---- First-visit rebrand notice (reuses the .demo-modal chrome) ---- */
+.rebrand-dialog{max-width:560px;padding:0;overflow:hidden;text-align:center}
+.rebrand-bar{display:block;height:8px;background:var(--red)}
+.rebrand-body{padding:42px 46px 40px}
+.rebrand-logos{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:30px}
+.rebrand-old{height:24px;width:auto}
+.rebrand-new{height:32px;width:auto}
+.rebrand-arrow{width:44px;height:12px;flex:0 0 auto}
+.rebrand-title{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:1.04;letter-spacing:-.01em;margin:0 0 28px}
+.rebrand-title .rl-1{display:block;font-size:26px;color:var(--navy2)}
+.rebrand-title .rl-2{display:block;font-size:48px;color:var(--red);margin-top:4px}
+.rebrand-btn{font-family:var(--body);font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:.04em;
+  color:var(--navy2);background:#f4f6fb;border:1.5px solid #cbd3e3;border-radius:6px;padding:13px 34px;cursor:pointer;
+  transition:background .15s,color .15s,border-color .15s}
+.rebrand-btn:hover{background:var(--navy2);border-color:var(--navy2);color:#fff}
+@media (max-width:560px){
+  .rebrand-body{padding:34px 24px 30px}
+  .rebrand-logos{gap:14px;margin-bottom:24px}
+  .rebrand-old{height:21px}.rebrand-new{height:28px}
+  .rebrand-title .rl-1{font-size:20px}.rebrand-title .rl-2{font-size:36px}
+}
+
 /* ---- Contact modal (self-hosted form; reuses the .demo-modal chrome) ---- */
 .contact-lead{font-family:var(--body);font-size:15px;color:#6b748f;margin:0 0 22px;line-height:1.5}
 .contact-lead a{color:var(--navy2);font-weight:600;text-decoration:underline}
