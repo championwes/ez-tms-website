@@ -992,6 +992,9 @@ body.page-light{background:#fff}
 .contact-submit:hover{background:var(--navy3)}
 .contact-submit:active{transform:translateY(1px)}
 .contact-thanks{font-size:18px;color:var(--navy2);padding:8px 0}
+.contact-error{font-family:var(--body);font-size:14px;color:var(--red);margin:-4px 0 0;line-height:1.45}
+/* honeypot: kept in the DOM for bots, hidden from people and screen readers */
+.cf-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
 
 /* ---- EZ Blaster game modal (iframe-embedded standalone game) ---- */
 .foot-finger{cursor:pointer;transition:transform .15s ease}

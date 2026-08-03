@@ -1,6 +1,7 @@
 /* Contact modal. Injected once per page; every "Contact" link opens it. Self-hosted
-   form (name, email, company, phone, message). No backend on this static host, so a
-   valid submit composes an email to Sales@EZ-TMS.com. */
+   form (name, email, company, phone, message). Submits via fetch to the /api/contact
+   Cloudflare Pages Function, which relays the message through Resend. MAILTO is only
+   shown as a fallback if the request fails. */
 (function () {
   var MAILTO = 'Sales@EZ-TMS.com';
 
@@ -31,8 +32,11 @@
           field('Phone', 'phone', 'tel', false, 'tel') +
         '</div>' +
         field('Message', 'message', 'text', true, null, true) +
+        // honeypot — hidden from real users; bots that fill it are silently dropped
+        '<input type="text" name="website" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />' +
         '<button type="submit" class="contact-submit">Send message</button>' +
-        '<p class="contact-thanks" hidden>Thanks! Your message is ready to send &mdash; we&rsquo;ll be in touch shortly.</p>' +
+        '<p class="contact-error" role="alert" hidden></p>' +
+        '<p class="contact-thanks" hidden>Thanks! Your message has been sent &mdash; we&rsquo;ll be in touch shortly.</p>' +
       '</form>';
   document.body.appendChild(modal);
 
@@ -74,24 +78,44 @@
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
+  var errEl = modal.querySelector('.contact-error');
+  var submitBtn = form.querySelector('.contact-submit');
+
+  function showThanks() {
+    form.querySelectorAll('.cf-field, .cf-row, .contact-submit').forEach(function (n) { n.style.display = 'none'; });
+    modal.querySelector('.contact-lead').style.display = 'none';
+    errEl.hidden = true;
+    thanks.hidden = false;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var d = new FormData(form), g = function (k) { return (d.get(k) || '').toString().trim(); };
-    var subject = 'Website contact — ' + g('name') + (g('company') ? ', ' + g('company') : '');
-    var body = [
-      'Name: ' + g('name'),
-      'Email: ' + g('email'),
-      'Company: ' + (g('company') || '—'),
-      'Phone: ' + (g('phone') || '—'),
-      '',
-      'Message:',
-      g('message')
-    ].join('\n');
-    window.location.href = 'mailto:' + MAILTO +
-      '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    form.querySelectorAll('.cf-field, .cf-row, .contact-submit').forEach(function (n) { n.style.display = 'none'; });
-    modal.querySelector('.contact-lead').style.display = 'none';
-    thanks.hidden = false;
+    var payload = {
+      name: g('name'), email: g('email'), company: g('company'),
+      phone: g('phone'), message: g('message'), website: g('website')
+    };
+
+    errEl.hidden = true;
+    submitBtn.disabled = true;
+    var origText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      return r.json().catch(function () { return { ok: r.ok }; });
+    }).then(function (res) {
+      if (!res || !res.ok) throw new Error((res && res.error) || 'Something went wrong.');
+      showThanks();
+    }).catch(function (err) {
+      errEl.textContent = err.message + ' You can also email ' + MAILTO + ' directly.';
+      errEl.hidden = false;
+      submitBtn.disabled = false;
+      submitBtn.textContent = origText;
+    });
   });
 
   Array.prototype.forEach.call(document.querySelectorAll('a'), function (a) {
