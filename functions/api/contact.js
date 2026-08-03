@@ -5,7 +5,7 @@
      RESEND_API_KEY   — your Resend API key
    Optional env vars (sensible defaults below):
      CONTACT_TO       — where leads are delivered   (default Sales@EZ-TMS.com)
-     CONTACT_FROM     — verified Resend sender       (default website@ez-tms.com)
+     CONTACT_FROM     — verified Resend sender       (default notify@updates.championdigitalmedia.com)
                         Must be on a domain verified in your Resend account. */
 
 export async function onRequestPost({ request, env }) {
@@ -38,7 +38,7 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: false, error: 'Email is not configured yet.' }, 500);
 
   const TO = env.CONTACT_TO || 'Sales@EZ-TMS.com';
-  const FROM = env.CONTACT_FROM || 'EZ TMS Website <website@ez-tms.com>';
+  const FROM = env.CONTACT_FROM || 'EZ TMS Website <notify@updates.championdigitalmedia.com>';
 
   const text = [
     `Name: ${name}`,
