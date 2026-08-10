@@ -865,6 +865,54 @@ body.page-light{background:#fff}
 .legal a{color:var(--red);text-decoration:underline;word-break:break-word}
 .legal a:hover{text-decoration:none}
 .legal-contact a{display:inline-block;color:var(--red)}
+
+/* ---- Blog index (clean text list) ---- */
+.blog{background:#fff;color:var(--navy2);padding:96px 0 110px}
+.blog-inner{max-width:840px;margin:0 auto;padding:0 var(--pad)}
+.blog-title{font-family:"Red Hat Display",var(--display);font-weight:900;font-size:clamp(38px,5vw,64px);
+  line-height:1.02;color:var(--navy2);margin:0 0 12px;text-transform:uppercase}
+.blog-intro{font-family:var(--body);font-size:18px;line-height:1.6;color:#6b748f;margin:0;max-width:640px}
+.blog-list{margin-top:46px;border-top:1px solid #e6e9f1}
+.blog-item{display:block;padding:30px 0;border-bottom:1px solid #e6e9f1;text-decoration:none;color:inherit}
+.blog-item .post-date{font-family:var(--body);font-size:14px;color:#6b748f;text-transform:uppercase;letter-spacing:.06em}
+.blog-item h2{font-family:"Red Hat Display",var(--display);font-weight:900;font-size:28px;line-height:1.12;
+  color:var(--navy2);margin:9px 0 10px;text-transform:none;transition:color .15s ease}
+.blog-item:hover h2{color:var(--red)}
+.blog-item .post-excerpt{font-family:var(--body);font-size:17px;line-height:1.7;color:#33405e;margin:0}
+.blog-item .read-more{display:inline-block;margin-top:12px;font-family:var(--body);font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:.04em;color:var(--red)}
+
+/* ---- Blog post (article) ---- */
+.post{background:#fff;color:var(--navy2);padding:72px 0 100px}
+.post-inner{max-width:760px;margin:0 auto;padding:0 var(--pad)}
+.post-back{display:inline-block;font-family:var(--body);font-weight:700;font-size:14px;text-transform:uppercase;
+  letter-spacing:.04em;color:var(--red);text-decoration:none;margin-bottom:30px}
+.post-back:hover{text-decoration:underline}
+.post-meta{font-family:var(--body);font-size:14px;color:#6b748f;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.post-title{font-family:"Red Hat Display",var(--display);font-weight:900;font-size:clamp(32px,4.6vw,52px);
+  line-height:1.05;color:var(--navy2);margin:0 0 32px;text-transform:uppercase}
+.post-body p{font-family:var(--body);font-size:18px;line-height:1.75;color:#33405e;margin:0 0 18px}
+.post-body h2{font-family:"Red Hat Display",var(--display);font-weight:900;font-size:26px;color:var(--navy2);
+  margin:40px 0 14px;text-transform:none}
+.post-body h3{font-family:"Red Hat Display",var(--display);font-weight:800;font-size:20px;color:var(--navy2);margin:28px 0 10px}
+.post-body ul,.post-body ol{margin:0 0 18px 22px;padding:0}
+.post-body li{font-family:var(--body);font-size:18px;line-height:1.7;color:#33405e;margin-bottom:8px;list-style:disc}
+.post-body ol li{list-style:decimal}
+.post-body a{color:var(--red);text-decoration:underline;word-break:break-word}
+.post-body a:hover{text-decoration:none}
+.post-body blockquote{margin:26px 0;padding:6px 0 6px 22px;border-left:3px solid var(--red);
+  font-family:"Red Hat Display",var(--display);font-weight:700;font-size:22px;line-height:1.4;color:var(--navy2)}
+.post-body strong{color:var(--navy2)}
+.post-divider{border:none;border-top:1px solid #e6e9f1;margin:48px 0 0}
+
+@media (max-width:640px){
+  .blog{padding:64px 0 72px}
+  .blog-item h2{font-size:23px}
+  .post{padding:52px 0 72px}
+  .post-title{margin-bottom:24px}
+  .post-body p,.post-body li{font-size:17px}
+  .post-body h2{font-size:22px}
+}
 @media (max-width:760px){
   .legal{padding:64px 0 72px}
   .legal h2{font-size:21px}
