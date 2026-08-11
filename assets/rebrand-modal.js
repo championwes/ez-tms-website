@@ -25,13 +25,20 @@
           '<span class="rl-1">EZ Loader TMS is now</span>' +
           '<span class="rl-2">EZ TMS</span>' +
         '</h2>' +
+        '<a class="rebrand-link" href="blog-founders-message.html">Read a message from the founders</a>' +
         '<button type="button" class="btn-outline rebrand-btn" data-close>Got it</button>' +
       '</div>' +
     '</div>';
   document.body.appendChild(modal);
 
   var btn = modal.querySelector('.rebrand-btn');
+  var link = modal.querySelector('.rebrand-link');
   var lastFocus = null;
+
+  // reading the founders' message counts as seeing the notice — don't pop it again
+  link.addEventListener('click', function () {
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  });
 
   function open() {
     lastFocus = document.activeElement;
@@ -55,7 +62,10 @@
   document.addEventListener('keydown', function (e) {
     if (!modal.classList.contains('is-open')) return;
     if (e.key === 'Escape') dismiss();
-    if (e.key === 'Tab') { e.preventDefault(); btn.focus(); }   // one focusable element
+    if (e.key === 'Tab') {                                        // trap between link and button
+      e.preventDefault();
+      (document.activeElement === btn ? link : btn).focus();
+    }
   });
 
   // let the page paint first, then present the notice

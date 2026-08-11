@@ -1010,6 +1010,9 @@ body.page-light{background:#fff}
 .rebrand-title .rl-2{display:block;font-size:48px;color:var(--red);margin-top:4px}
 /* GOT IT reuses the site's standard .btn-outline (red border, hover-fills red);
    just reset the native button chrome and use navy text on the white dialog */
+.rebrand-link{display:block;font-family:var(--body);font-weight:700;font-size:15px;text-transform:uppercase;
+  letter-spacing:.03em;color:var(--red);text-decoration:underline;margin:0 0 20px}
+.rebrand-link:hover{text-decoration:none}
 .rebrand-btn{background:none;cursor:pointer;color:var(--navy2);margin-top:4px}
 .rebrand-btn:hover{background:var(--red);color:#fff}
 @media (max-width:560px){
