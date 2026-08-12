@@ -62,8 +62,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;lin
 /* caret: drawn with borders (not the ▾ glyph, which blurs to a dot at this size) */
 .nav-dd .caret{font-size:0;display:inline-block;width:6px;height:6px;margin-left:2px;
   border-right:2px solid var(--red);border-bottom:2px solid var(--red);
-  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
-.nav-dd:hover .caret,.nav-dd:focus-within .caret{transform:translateY(1px) rotate(225deg)}
+  transform:rotate(45deg);transition:transform .2s ease}
+.nav-dd:hover .caret,.nav-dd:focus-within .caret{transform:rotate(225deg)}
 .nav-dd-menu{position:absolute;top:100%;left:50%;margin-top:14px;min-width:212px;padding:10px 0;
   background:#0a1225;border:1px solid rgba(255,255,255,.14);border-radius:10px;
   box-shadow:0 16px 36px rgba(0,0,0,.4);display:flex;flex-direction:column;
@@ -696,7 +696,7 @@ body.page-light{background:#fff}
     padding:15px var(--pad);font-size:15px;border-bottom:1px solid rgba(255,255,255,.06)}
   .site-header.light .nav-dd-trigger{border-bottom-color:rgba(0,0,0,.06)}
   .nav-dd .caret{width:8px;height:8px;margin-left:4px;transition:transform .25s ease}
-  .nav-dd.dd-open .caret{transform:translateY(2px) rotate(225deg)}
+  .nav-dd.dd-open .caret{transform:rotate(225deg)}
   .nav-dd-menu{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;
     min-width:0;margin:0;padding:0;border:none;border-radius:0;box-shadow:none;background:rgba(0,0,0,.2);
     max-height:0;overflow:hidden;transition:max-height .25s ease}
