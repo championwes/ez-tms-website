@@ -1,0 +1,22 @@
+# EZ TMS
+
+> EZ TMS (formerly EZLoader TMS) is a cloud-based transportation management system (TMS) built specifically for freight brokerages. Founded inside a freight brokerage in 2011, it covers the full load cycle — quote, book, move, bill — for both full truckload and LTL shipping, with flat-rate pricing and no per-load fees.
+
+Key facts:
+- Product: cloud-based TMS for freight brokerages (not shippers or carriers)
+- Pricing: $500/month flat rate, includes 3 user seats; no per-load fees, no integration setup fees, no feature gates
+- Rebrand: EZLoader TMS became EZ TMS in 2026 — same company, same product
+- Features: built-in CRM, digital documentation/e-sign, team task manager, automated batch invoicing, live rating and capacity, freight matching, customer portals, digital carrier onboarding, live tracking, live dashboards, LTL portal
+- EDI: offered through a partnership with Bitfreighter (X12 204, 990, 214, 210, 997), flat monthly pricing per trading partner
+- Contact: (855) 594-8342, Sales@EZ-TMS.com
+
+## Pages
+
+- [Home](https://www.ez-tms.com/): product overview and demo request
+- [About / Why EZ](https://www.ez-tms.com/why-ez): company story — built, tested, and used by brokers since 2011
+- [Truckload Shipping](https://www.ez-tms.com/truckload-shipping): full truckload load cycle
+- [LTL Portal](https://www.ez-tms.com/ltl-portal): LTL rating, dispatching, tracking; marketplace partners and direct tariffs
+- [EDI Connectivity](https://www.ez-tms.com/edi-connectivity): EDI via the Bitfreighter partnership
+- [Integrations](https://www.ez-tms.com/integrations): full integration catalog, all included
+- [Pricing](https://www.ez-tms.com/pricing): flat-rate pricing details and FAQ
+- [Blog](https://www.ez-tms.com/blog): announcements and insights, including the founders' rebrand message
