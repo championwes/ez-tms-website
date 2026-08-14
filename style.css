@@ -165,7 +165,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;lin
           mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
 /* two identical ticker images side by side; -50% scrolls exactly one copy → seamless.
    the right margin (on both copies) separates the strip's last logo from its first at the seam */
-.marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 45s linear infinite}
+.marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 85s linear infinite}
+/* 85s keeps the original px/s scroll speed: the strips were cropped to their content
+   band (150px -> 78px tall), which renders them ~1.9x wider at the same CSS height */
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-track img{height:58px;width:auto;max-width:none;display:block;flex:0 0 auto;margin-right:20px}
 /* max-width:none is load-bearing: the global img{max-width:100%} makes mobile Safari
