@@ -424,6 +424,11 @@ body.page-light{background:#fff}
 .cat-logos img{flex:0 1 150px;width:150px;height:58px;min-width:0;object-fit:contain}
 /* square/round marks size to their height so they don't reserve a wide, mostly-empty cell */
 .cat-logos img.sq{flex:0 1 auto;width:auto}
+/* partner links: display:contents keeps the imgs as the flex items, so the
+   grid metrics above apply unchanged on desktop and mobile */
+.cat-logos a{display:contents}
+.cat-logos a img{cursor:pointer;transition:opacity .15s ease}
+.cat-logos a:hover img{opacity:.7}
 .mkt-logos{display:flex;align-items:center;gap:40px;margin-bottom:96px}
 .mkt-logos img{width:230px;height:80px;object-fit:contain}
 .carrier-grid{display:flex;flex-wrap:wrap;gap:26px;align-items:center}
