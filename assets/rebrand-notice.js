@@ -5,11 +5,10 @@
 
      <script async src="https://www.ez-tms.com/assets/rebrand-notice.js"></script>
 
-   Shows once per browser session. Primary button sends visitors to the new
-   site (UTM-tagged); "Continue to the old site" dismisses. */
+   Shows on EVERY page load (no seen-flag) — the old site's one job now is to
+   push visitors to the new one. Primary button sends visitors to the new site
+   (UTM-tagged); "Continue to the old site" dismisses for that page only. */
 (function () {
-  var KEY = 'eztms_rebrand_notice';
-  try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
 
   // resolve asset URLs from wherever this script was loaded (works on any host)
   var script = document.currentScript || (function () {
@@ -75,16 +74,11 @@
     if (cta) cta.focus();
   }
 
-  function seen() { try { sessionStorage.setItem(KEY, '1'); } catch (e) {} }
-  function dismiss() {
-    seen();
-    modal.remove();
-  }
+  function dismiss() { modal.remove(); }
 
   modal.addEventListener('click', function (e) {
     if (e.target.hasAttribute('data-eztms-close')) dismiss();
   });
-  modal.querySelector('.eztms-rn-cta').addEventListener('click', seen);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.parentNode) dismiss();
   });
