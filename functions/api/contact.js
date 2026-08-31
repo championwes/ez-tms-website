@@ -39,7 +39,7 @@ export async function onRequestPost({ request, env }) {
   if (!env.RESEND_API_KEY)
     return json({ ok: false, error: 'Email is not configured yet.' }, 500);
 
-  const TO = (env.CONTACT_TO || 'wes@championdigitalmedia.com')
+  const TO = (env.CONTACT_TO || 'wes@championdigitalmedia.com, tross@ezloadertms.com, coshields@ezloadertms.com')
     .split(',').map((a) => a.trim()).filter(Boolean);
   const FROM = env.CONTACT_FROM || 'EZ TMS Website <notify@updates.championdigitalmedia.com>';
 
