@@ -4,8 +4,9 @@
    Required env var (set in the Cloudflare Pages dashboard):
      RESEND_API_KEY   — your Resend API key
    Optional env vars (sensible defaults below):
-     CONTACT_TO       — where leads are delivered   (default wes@championdigitalmedia.com
-                        for testing — switch to Sales@EZ-TMS.com for the client via env var)
+     CONTACT_TO       — where leads are delivered; accepts one address or a
+                        comma-separated list, e.g. "Sales@EZ-TMS.com, ops@EZ-TMS.com"
+                        (default wes@championdigitalmedia.com for testing)
      CONTACT_FROM     — verified Resend sender       (default notify@updates.championdigitalmedia.com)
                         Must be on a domain verified in your Resend account. */
 
@@ -38,7 +39,8 @@ export async function onRequestPost({ request, env }) {
   if (!env.RESEND_API_KEY)
     return json({ ok: false, error: 'Email is not configured yet.' }, 500);
 
-  const TO = env.CONTACT_TO || 'wes@championdigitalmedia.com';
+  const TO = (env.CONTACT_TO || 'wes@championdigitalmedia.com')
+    .split(',').map((a) => a.trim()).filter(Boolean);
   const FROM = env.CONTACT_FROM || 'EZ TMS Website <notify@updates.championdigitalmedia.com>';
 
   const text = [
@@ -70,7 +72,7 @@ export async function onRequestPost({ request, env }) {
       headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
       body: JSON.stringify({
         from: FROM,
-        to: [TO],
+        to: TO,
         reply_to: email,
         subject: `Website contact — ${name}${company ? ', ' + company : ''}`,
         text,
