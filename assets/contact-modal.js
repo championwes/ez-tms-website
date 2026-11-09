@@ -23,7 +23,7 @@
       '<button class="demo-close" type="button" aria-label="Close" data-close>&times;</button>' +
       '<h2 id="contactTitle" class="demo-title">Contact <span class="r">us.</span></h2>' +
       '<p class="contact-lead">Send us a message and we&rsquo;ll get right back to you. ' +
-        'Prefer to call? <a href="tel:8555948342">(855)&nbsp;594-8342</a></p>' +
+        'Prefer to call? <a href="tel:8559395623">(855)&nbsp;939-5623</a></p>' +
       '<form class="contact-form">' +
         field('Name', 'name', 'text', true, 'name') +
         field('Email', 'email', 'email', true, 'email') +
