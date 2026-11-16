@@ -101,7 +101,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;lin
 .problem h2{font-size:48px;color:var(--navy)}
 .problem .lead{font-size:20px;max-width:74ch;margin:22px auto 0;color:#2c3858;font-family:var(--body);letter-spacing:.02em}
 .problem .lead strong{color:var(--navy)}
-/* overlapping app-screenshot cluster (shares .shot-cluster/.cluster with LTL) */
+
 .prob-shots{position:relative;margin:48px 0 56px}
 /* faded texture band behind the title + screenshots (fades out before the columns) */
 .prob-backdrop{position:absolute;top:0;left:50%;transform:translateX(-50%);
@@ -337,19 +337,9 @@ body.page-light{background:#fff}
   linear-gradient(0deg,#0a1225 5%,rgba(10,18,37,0) 69%)}
 .ltl-band{background:var(--navy);padding:130px 0 56px}
 .lead-light{font-size:22px;letter-spacing:.07em;text-align:center;color:#fff;max-width:786px;margin:0 auto 70px}
-.shot-cluster{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2.6vw,48px)}
-/* layered fan: current screenshot centered + on top, prev/next peeking behind */
-.fan{position:relative;width:1000px;max-width:100%;aspect-ratio:1180/378;margin:0;flex:0 1 auto}
-.fan img{position:absolute;top:50%;left:50%;width:60%;height:auto;border-radius:12px;object-fit:cover;
-  opacity:0;z-index:1;pointer-events:none;transform:translate(-50%,-50%) scale(.76);
-  transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,filter .55s ease}
-.fan img.is-c{opacity:1;z-index:3;transform:translate(-50%,-50%) scale(1);box-shadow:0 16px 40px rgba(20,40,90,.3)}
-.fan img.is-l{opacity:1;z-index:2;transform:translate(-86%,-50%) scale(.85);filter:brightness(.8)}
-.fan img.is-r{opacity:1;z-index:2;transform:translate(-14%,-50%) scale(.85);filter:brightness(.8)}
-.cluster-arrow{flex:0 0 auto;background:none;border:none;color:var(--red);
-  font-size:clamp(34px,3.4vw,50px);line-height:1;cursor:pointer;font-family:var(--display);padding:0;
-  transition:color .15s ease,transform .15s ease}
-.cluster-arrow:hover{color:#ff3d41;transform:scale(1.15)}
+/* homepage hype video (replaced the screenshot fan carousel) */
+.hype-video{display:block;width:min(1000px,calc(100% - 2*var(--pad)));height:auto;margin:0 auto;
+  border-radius:12px;background:#05060c;box-shadow:0 16px 40px rgba(20,40,90,.3)}
 .dots{display:flex;justify-content:center;gap:9px;margin-top:30px}
 .dots span{width:9px;height:9px;border-radius:50%;background:rgba(20,40,90,.22);cursor:pointer;transition:background .2s}
 .dots span:hover{background:rgba(20,40,90,.45)}
@@ -791,8 +781,6 @@ body.page-light{background:#fff}
   .cta-band{height:360px}
   .ltl-band{padding:56px 0 40px}
   .lead-light{font-size:17px;margin-bottom:36px}
-  .shot-cluster{gap:6px}
-  .cluster-arrow{font-size:26px}
   .lg-title{font-size:36px}
   .edi-sub{font-size:17px;padding:0 var(--pad)}
   .edi-photo{height:200px}

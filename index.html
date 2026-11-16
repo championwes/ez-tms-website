@@ -141,18 +141,10 @@ document.head.appendChild(o)}initApollo();</script>
   </div>
 
   <div class="prob-shots">
-    <div class="shot-cluster">
-      <button class="cluster-arrow left" id="shotPrev" aria-label="Previous screenshot">&lsaquo;</button>
-      <div class="fan" id="shotFan">
-        <!-- SCREENSHOTS: to add one, drop the image in assets/ and add a line below. -->
-        <img src="assets/shot-1.jpg" alt="" />
-        <img src="assets/shot-2.jpg" alt="" />
-        <img src="assets/shot-3.jpg" alt="" />
-        <img src="assets/shot-4.jpg" alt="" />
-        <img src="assets/shot-5.jpg" alt="" />
-      </div>
-      <button class="cluster-arrow right" id="shotNext" aria-label="Next screenshot">&rsaquo;</button>
-    </div>
+    <video class="hype-video" controls preload="metadata" playsinline
+           poster="assets/ez-tms-hype-poster.jpg" width="1920" height="1080">
+      <source src="assets/ez-tms-hype.mp4" type="video/mp4" />
+    </video>
   </div>
 
   <div class="wrap">
@@ -380,7 +372,6 @@ document.head.appendChild(o)}initApollo();</script>
 
 <script src="assets/nav-menu.js"></script>
 <script src="assets/features-focus.js"></script>
-<script src="assets/carousel.js"></script>
 <script src="assets/testimonials.js"></script>
 <script src="assets/demo-modal.js"></script>
 <script src="assets/contact-modal.js"></script>
