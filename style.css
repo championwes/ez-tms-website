@@ -338,7 +338,8 @@ body.page-light{background:#fff}
 .ltl-band{background:var(--navy);padding:130px 0 56px}
 .lead-light{font-size:22px;letter-spacing:.07em;text-align:center;color:#fff;max-width:786px;margin:0 auto 70px}
 /* homepage hype video (replaced the screenshot fan carousel) */
-.hype-video{display:block;width:min(1000px,calc(100% - 2*var(--pad)));height:auto;margin:0 auto;
+/* 736px = the span of the two middle icon-row columns on a full-width desktop */
+.hype-video{display:block;width:min(736px,calc(100% - 2*var(--pad)));height:auto;margin:0 auto;
   border-radius:12px;background:#05060c;box-shadow:0 16px 40px rgba(20,40,90,.3)}
 .dots{display:flex;justify-content:center;gap:9px;margin-top:30px}
 .dots span{width:9px;height:9px;border-radius:50%;background:rgba(20,40,90,.22);cursor:pointer;transition:background .2s}
