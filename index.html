@@ -142,8 +142,10 @@ document.head.appendChild(o)}initApollo();</script>
 
   <div class="prob-shots">
     <video class="hype-video" controls preload="metadata" playsinline
-           poster="assets/ez-tms-hype-poster.jpg" width="1920" height="1080">
-      <source src="assets/ez-tms-hype.mp4" type="video/mp4" />
+           poster="assets/ez-tms-hype-poster-welcome.jpg" width="1920" height="1080">
+      <!-- served via /media/hype (Pages Function) because Pages static hosting
+           lacks Range support, which seeking/scrubbing needs -->
+      <source src="/media/hype" type="video/mp4" />
     </video>
   </div>
 
