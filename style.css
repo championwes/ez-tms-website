@@ -341,6 +341,15 @@ body.page-light{background:#fff}
 /* 736px = the span of the two middle icon-row columns on a full-width desktop */
 .hype-video{display:block;width:min(736px,calc(100% - 2*var(--pad)));height:auto;margin:0 auto;
   border-radius:12px;background:#05060c;box-shadow:0 16px 40px rgba(20,40,90,.3)}
+.hype-video.lg{width:min(1000px,calc(100% - 2*var(--pad)))}
+
+/* /watch — sales-shareable video page */
+.watch{background:#fff;color:var(--navy2);padding:64px 0 56px;text-align:center}
+.watch-title{font-size:clamp(34px,5vw,56px);color:var(--navy2);margin-bottom:12px}
+.watch-sub{font-family:var(--body);font-size:18px;color:#6b748f;margin:0 auto 38px;max-width:560px}
+.watch-demo{background:#fff;padding:8px var(--pad) 96px}
+/* reuse the demo modal's dialog + HubSpot form styling as an inline card */
+.demo-inline{max-height:none;overflow:visible;animation:none;margin:0 auto}
 .dots{display:flex;justify-content:center;gap:9px;margin-top:30px}
 .dots span{width:9px;height:9px;border-radius:50%;background:rgba(20,40,90,.22);cursor:pointer;transition:background .2s}
 .dots span:hover{background:rgba(20,40,90,.45)}
