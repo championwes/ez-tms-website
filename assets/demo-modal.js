@@ -39,7 +39,17 @@
       host.innerHTML = '';
       window.hbspt.forms.create({
         portalId: HS.portalId, formId: HS.formId, region: HS.region,
-        target: '#hsDemoForm', css: ''
+        target: '#hsDemoForm', css: '',
+        onFormSubmitted: function () {
+          // Google Ads lead conversion — fires only on a real form submission
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18584895014/qGKfCIrszLsdEKb8-51F',
+              'value': 1.0,
+              'currency': 'USD'
+            });
+          }
+        }
       });
     });
   }

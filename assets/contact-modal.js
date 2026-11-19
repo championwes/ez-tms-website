@@ -109,6 +109,14 @@
       return r.json().catch(function () { return { ok: r.ok }; });
     }).then(function (res) {
       if (!res || !res.ok) throw new Error((res && res.error) || 'Something went wrong.');
+      // Google Ads lead conversion — fires only on a successful submission
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18584895014/qGKfCIrszLsdEKb8-51F',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
       showThanks();
     }).catch(function (err) {
       errEl.textContent = err.message + ' You can also email ' + MAILTO + ' directly.';

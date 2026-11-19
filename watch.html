@@ -30,6 +30,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-F6SY4EPC69');
+  gtag('config', 'AW-18584895014');
 </script>
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
@@ -136,7 +137,17 @@ document.head.appendChild(o)}initApollo();</script>
     formId: '457a5429-3d74-43af-8845-0731544be4e2',
     region: 'na1',
     target: '#watchDemoForm',
-    css: ''
+    css: '',
+    onFormSubmitted: function () {
+      // Google Ads lead conversion — fires only on a real form submission
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18584895014/qGKfCIrszLsdEKb8-51F',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
+    }
   });
 </script>
 </body>
